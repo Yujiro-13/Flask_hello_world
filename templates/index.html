@@ -26,10 +26,23 @@
         <!--{% for num in message %}
           <p>{{num}}</p>
         {% endfor %} -->
-        {% for item in message %}
+        <!-- {% for item in message %}
           <a href={{item.link_url}} class="thumbnail"><img src={{item.image_name}}></a>
-          {% endfor %}
+          {% endfor %} -->
       </div>
+      <hr/>
+    {% for grade in message.keys() %}
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ grade }}
+            </button>
+            <ul class="dropdown-menu">
+                {% for name in message[grade] %}
+                    <li><a href="#">{{ name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
     </div>
   </body>
 </html>
