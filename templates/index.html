@@ -23,9 +23,12 @@
             <p>univ: {{message.univ}}</p>
         {% endif %} -->
         <!-- dex.htmlを読み込む際にmessageというリスト変数を渡され、中身を順番に表示 -->
-        {% for num in message %}
+        <!--{% for num in message %}
           <p>{{num}}</p>
-        {% endfor %}
+        {% endfor %} -->
+        {% for item in message %}
+          <a href={{item.link_url}} class="thumbnail"><img src={{item.image_name}}></a>
+          {% endfor %}
       </div>
     </div>
   </body>
